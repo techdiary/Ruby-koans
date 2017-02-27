@@ -14,6 +14,9 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+   raise TriangleError, "No sides can be negative" if [a,b,c].min <= 0
+   x, y, z = [a, b, c].sort
+   raise TriangleError, "No two sides can be less than other" if x + y <= z
    if  (a == b) && (a == c)
      :equilateral
    elsif (a.eql?(b)) || (b.eql?(c)) || (c.eql?(a))
