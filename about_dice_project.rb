@@ -4,7 +4,14 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 #
 # class DiceSet
 #   code ...
-# end
+# end 
+class DiceSet
+	attr_reader:values
+	def roll(dice_value)
+		@values = (1..dice_value).to_a.shuffle
+	end	
+end
+
 
 class AboutDiceProject < Neo::Koan
   def test_can_create_a_dice_set
